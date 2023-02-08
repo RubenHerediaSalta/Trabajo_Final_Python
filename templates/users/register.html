@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Registro
+{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+    {% if form %}
+
+        <form action="" method="POST" class="form-control w-50 position-relative top-10 mx-auto" style="padding-top: 6em; padding-bottom: 7em;">
+        <h1>Completa el formulario para registrarte</h1>
+        <hr>
+            {% csrf_token %}
+            <table>
+                {{ form | crispy }}
+            </table>
+            <input type="submit" value="Crear Cuenta" class="btn btn-primary">
+        </form>
+    {% endif %}
+
+        
+        {% if errors %}
+        {{errors}}
+        {% endif %}
+
+{% endblock %}

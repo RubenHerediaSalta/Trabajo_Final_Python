@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+  PANEL DE CONTROL
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row" style="padding-top: 6em; padding-bottom: 6em;">
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-12">
+      <h2>Listado de servicios</h2>
+      <div><a href="/product_coaching/create-product_coaching/" class="btn btn-success">Agregar Servicio</a></div>
+      <div class="table-responsive py-2">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Título</th>
+              <th>Precio</th>
+              <th>Descripción</th>
+              <th>Imagen</th>
+              <th colspan="2">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in product_coaching %}
+            <tr>
+              <td>{{product.id}}</td>
+              <td>{{product.title}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.description}}</td>
+              <td><img src="{{product.image.url}}" width="50px" height="50px"></td>
+              <td><a href="/product_coaching/update-product_coaching/{{product.id}}" class="btn btn-info">Editar</a></td>
+              <td><a href="/product_coaching/delete-product_coaching/{{product.id}}" class="btn btn-danger btndelete">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+{% endblock %}

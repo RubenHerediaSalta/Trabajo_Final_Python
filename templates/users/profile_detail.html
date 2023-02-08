@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Perfil de {{request.user}}
+{% endblock %}
+
+
+
+{% block content %}
+
+            <div class="form-control w-50 position-relative top-10 mx-auto" style="padding-top: 6em; padding-bottom: 7em;">
+                <div class="card-body text-center">
+                    <h2 class="text-center">BIENVENIDO {{request.user}}</h2>
+                    <hr>
+                    {% if request.user.profile.profile_picture.url != '' %}
+                    <img src="{{request.user.profile.profile_picture.url}}" alt="profile_picture" class="img-fluid rounded mx-auto d-block" style="width: 200px; height: 200px;">
+                    {% endif %}
+    
+                    <div class="d-grid gap-2 py-1">
+                        <a class="btn btn-primary" href="/users/update/profile" role="button">Editar Perfil</a>
+                    </div>
+                    {% if user.is_authenticated and user.is_staff %}
+                    <div class="d-grid gap-2 py-1">
+                        <a class="btn btn-success" href="../../controlpanel" role="button">Panel de control</a>
+                    </div>
+                    {% endif %}
+                    
+                </div>
+            </div>
+      
+
+
+{% endblock %}

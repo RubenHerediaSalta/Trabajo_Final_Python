@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+  {% if form %}
+
+        <form action="" method="POST" class="form-control w-25 position-relative mx-auto" style="padding-top: 6em; padding-bottom: 7em;">
+            <h1>Iniciar Sesion</h1>
+            <hr>
+
+            {% csrf_token %}
+
+            <table>
+                {{ form | crispy }}
+            </table>
+
+            {% if errors %}
+                <p style="color:red;">{{errors}}</p>
+            {% endif %}
+
+            <input type="submit" value="Ingresar" class="btn btn-success">
+
+        </form>
+    {% endif %}
+
+{% endblock %}

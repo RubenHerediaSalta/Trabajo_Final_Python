@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Actualizacion de Servicio
+{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+
+<div class="container">
+    {% if form %}
+    <div class="row" style="padding-top: 6em; padding-bottom: 7em;">
+        <div class="col-12 col-md-6 offset-md-3">
+            <form action="" method="POST" enctype="multipart/form-data" class="form-control w-100 position-relative top-10 mx-auto">
+                <h1>Actualizar Servicio</h1>
+                <hr>
+                {% csrf_token %}
+                {{ form | crispy }}
+                <input type="submit" value="Actualizar" class="btn btn-primary">
+                <a href="/product_coaching/controlpanel-product_coaching" class="btn btn-danger">Cancelar</a>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+
+    {% if form_errors %}
+        <h2 style="color: red;" >Errores:</h2>
+        {{form_errors}}
+    {% endif %}
+</div>
+
+    {% if message %}
+        <h2 style="color: green;" >{{message}}</h2>
+    {% endif %}
+
+
+
+
+
+{% endblock %}

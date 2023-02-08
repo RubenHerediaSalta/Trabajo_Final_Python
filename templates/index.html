@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Inicio
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5 pt-5 text-center">
+        <h2>CHOOSE WISELY</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6 m-0 p-0">
+            <div class="index_img1">
+                <a href="/product_coaching/list-product_coaching"><h3 class="index_tittle">COACHING</h3></a>
+            </div>
+        </div>
+        <div class="col-md-6 m-0 p-0">
+            <div class="index_img2">
+                <a href="/product_account/list-product_account"><h3 class="index_tittle">COMPRAR CUENTAS</h3></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pb-4">
+    <div class="row mt-5 pt-2 pb-2 text-center">
+        <div class="col">
+            <h3>CONOCE A NUSTROS COACHES</h3>
+  
+        </div>
+    </div>
+    <div class="row" style="text-align: -webkit-center;">
+
+      {% for image in images %}
+      <div class="col-md">
+        <div class="card">
+          <div class="wrapper">
+            <img src="{{image.background.url}}" class="cover-image" />
+          </div>
+          <img src="{{image.name.url}}" class="title" />
+          <img src="{{image.imagepop.url}}" class="character" />
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+
+  
+
+{% endblock %}
+

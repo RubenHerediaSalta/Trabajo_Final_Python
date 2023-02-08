@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+  PANEL DE CONTROL
+{% endblock %}
+
+{% block content %}
+
+<div class="row position-relative top-10 mx-auto" style="padding-top: 7em; padding-bottom: 7em;">
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">ADMINISTRAR CUENTAS PARA LA VENTA</h5>
+        <p class="card-text">CRUD de productos</p>
+        <a href="/product_account/controlpanel-product_account" class="btn btn-primary">ENTRAR</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">ADMINISTRAR SERVICIOS DE COUCHING</h5>
+        <p class="card-text">CRUD de servicios</p>
+        <a href="/product_coaching/controlpanel-product_coaching" class="btn btn-primary">ENTRAR</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">ADMINISTRAR COACHES</h5>
+        <p class="card-text">CRUD de coaches</p>
+        <a href="/coaches/controlpanel-coaches" class="btn btn-primary">ENTRAR</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

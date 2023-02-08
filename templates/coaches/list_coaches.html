@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+  CUENTAS
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="container p-0">
+    
+
+    <div class="row d-flex justify-content-center" style="padding-top: 7em; padding-bottom: 7em;">
+      <h1 class="text-center">SERVICIOS DISPONIBLES</h1>
+
+    
+    {% for product in coaches %}
+
+        <div class="col-lg-3 text-center p-3 m-2" style="border: solid black .5px;">
+          {% if service.service_picture.url != '' %}
+                <img src="{{product.image.url}}" class="img-fluid rounded mx-auto" style="width: auto; height: 200px;">
+            {% endif %}
+        <div class="">
+          <h5 class="card-title">{{product.title}}</h5>
+  
+          <p class="card-text">Descripción: {{product.description}}</p>
+  
+          <p class="card-text">Precio ${{product.price}}</p>
+
+          {% if product.available %}
+
+          <a href="" class="btn btn-success">Entrenador Disponible</a>
+          <a href="#" class="btn btn-primary">Contratar</a>
+
+          {% else %}
+
+          <p class="btn btn-danger">Sin Entrenador</p>
+
+          {% endif %}
+          
+
+
+        </div>
+      </div>
+        
+    {% endfor %}
+    </div>
+  </div>
+
+    {% endblock %}
+
+
+
+     
+          
+    

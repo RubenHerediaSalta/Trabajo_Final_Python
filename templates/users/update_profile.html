@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Actualizacion de perfil de usuario
+{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+
+
+    {% if form %}
+
+        <form action="" method="POST" enctype="multipart/form-data" class="form-control w-50 position-relative top-10 mx-auto" style="padding-top: 6em; padding-bottom: 7em;">
+        <h1>Cambiar/Agregar datos</h1>
+        <hr>
+
+            {% csrf_token %}
+
+            <table>
+                {{ form | crispy }}
+            </table>
+
+
+            <input type="submit" value="Actualizar" class="btn btn-primary p-1">
+            <a class="btn btn-danger p-1" href="/users/profile-detail/" role="button">Cancelar</a>
+        </form>
+    {% endif %}
+
+    {% if errors %}
+        {{errors}}
+    {% endif %}
+
+
+{% endblock %}
