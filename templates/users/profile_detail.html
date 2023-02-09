@@ -13,7 +13,8 @@
                     <h2 class="text-center">BIENVENIDO {{request.user}}</h2>
                     <hr>
                     {% if request.user.profile.profile_picture.url != '' %}
-                    <img src="{{request.user.profile.profile_picture.url}}" alt="profile_picture" class="img-fluid rounded mx-auto d-block" style="width: 200px; height: 200px;">
+                    <img src="{{request.user.profile.profile_picture.url}}" class="img-fluid rounded mx-auto d-block" style="width: 200px; height: 200px;">
+                    <h3>{{request.user.profile.first_name}} {{request.user.profile.last_name}}</h3>
                     {% endif %}
     
                     <div class="d-grid gap-2 py-1">

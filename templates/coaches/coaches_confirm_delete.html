@@ -8,7 +8,7 @@
 
     
 <div class="form-control w-50 position-relative top-10 mx-auto" style="padding-top: 7em; padding-bottom: 7em;">
-    <h2>Borrar elemento {{object.title}} - <img src="{{object.image.url}}" width="50px" height="50px"></h2>
+    <h2>Borrar elemento {{object.title}} - <img src="{{object.name.url}}" width="50px" height="50px"></h2>
         <h4>Seguro que desea eliminarlo?</h4>
             <form action="" method="POST">
             {% csrf_token %}
